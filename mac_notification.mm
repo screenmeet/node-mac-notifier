@@ -57,7 +57,12 @@ MacNotification::MacNotification(Nan::Utf8String *id,
       soundString;
   }
 
-  notification.hasReplyButton = canReply;
+  if (canReply) {
+    notification.hasActionButton = true;
+    notification.actionButtonTitle = @"Allow";
+    notification.otherButtonTitle = @"Deny";
+  }
+
 
   NSUserNotificationCenter *center = [NSUserNotificationCenter defaultUserNotificationCenter];
   [center deliverNotification:notification];
