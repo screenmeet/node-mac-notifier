@@ -60,7 +60,7 @@ MacNotification::MacNotification(Nan::Utf8String *id,
   if (canReply) {
     notification.hasActionButton = true;
     notification.actionButtonTitle = @"Allow";
-    notification.otherButtonTitle = @"Deny";
+    notification.otherButtonTitle = @"Dismiss";
   }
 
 
