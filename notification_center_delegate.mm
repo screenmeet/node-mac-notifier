@@ -45,12 +45,12 @@ static void AsyncSendHandler(uv_async_t *handle) {
 - (void)userNotificationCenter:(NSUserNotificationCenter *)center
        didActivateNotification:(NSUserNotification *)notification
 {
-  Info.isReply = notification.activationType == NSUserNotificationActivationTypeReplied;
+  Info.isReply = notification.activationType == NSUserNotificationActivationTypeActionButtonClicked || notification.activationType == NSUserNotificationActivationTypeActionButtonClicked;
   Info.id = strdup(notification.identifier.UTF8String);
   Info.callback = OnActivation;
 
   if (Info.isReply) {
-    Info.response = strdup(notification.response.string.UTF8String);
+    Info.response = "action";
   } else {
     Info.response = "";
   }
