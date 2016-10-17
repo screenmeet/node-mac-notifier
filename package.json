@@ -1,5 +1,5 @@
 {
-  "name": "node-mac-notifier",
+  "name": "ea-mac-notifier",
   "version": "0.0.13",
   "description": "Create native OS X notifications from Node.js",
   "main": "index.js",
